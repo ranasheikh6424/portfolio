@@ -1,0 +1,541 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    background-color: #333;
+    color: white;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+/* Profile Section Styling */
+.profile-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-image:url("images/download (3).jpg");
+     background-size: cover;
+    padding: 40px;
+    background-color: #f4f4f9;
+    animation: fadeIn 2s ease-in-out; /* Fade-in effect for section */
+}
+
+/* Profile Card */
+.profile-card {
+    margin-top:20px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1100px;
+}
+
+/* Left side (Profile Image) */
+.profile-left {
+margin-top:40px;
+    flex: 1;
+    text-align: center;
+    animation: zoomIn 1.5s ease-in-out; /* Zoom effect for the profile image */
+}
+
+.profile-picture {
+margin-top:30px;
+      border:2px solid red;
+    display: flex;
+    margin-bottom:0px;
+    width: 250px;
+    height: 370px;
+    border-radius: 20%; /* Circular image */
+    transition: transform 0.3s ease; /* Hover effect */
+}
+
+/* Hover effect for Profile Image */
+.profile-picture:hover {
+    transform: scale(1.1); /* Slight zoom-in effect */
+}
+
+/* Right side (Name, Description, Carousel Text) */
+.profile-right {
+    flex: 1;
+    padding-left: 20px;
+    animation: slideIn 1s ease-out; /* Slide-in animation for the text */
+}
+
+.profile-name {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: red;
+}
+
+.profile-description {
+    font-size: 1.2em;
+    color: blue;
+    margin-bottom: 20px;
+}
+
+.carousel-text {
+    font-size: 1.1em;
+    color: white;
+    font-style: italic;
+    animation: carousel 10s infinite; /* Infinite carousel animation */
+}
+
+.carousel-text p {
+    margin: 10px 0;
+    opacity: 0;
+    animation: fadeInOut 4s infinite; /* Fade-in and fade-out animation for each text */
+}
+
+/* Fade-in effect for the profile section */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Zoom-in effect for the Profile Image */
+@keyframes zoomIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Slide-in effect for the text */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Carousel text effect */
+@keyframes carousel {
+    0%, 20% { opacity: 1; }
+    33%, 53% { opacity: 0; }
+    66%, 100% { opacity: 1; }
+}
+
+/* Fade in/out effect for carousel text */
+@keyframes fadeInOut {
+    0%, 20% { opacity: 1; }
+    33%, 53% { opacity: 0; }
+    66%, 100% { opacity: 1; }
+}
+
+/* Media Query for smaller screens */
+@media (max-width: 768px) {
+    .profile-section {
+        flex-direction: column; /* Stack profile image and text on smaller screens */
+        text-align: center;
+    }
+
+    .profile-left {
+        margin-bottom: 20px; /* Add space between image and text */
+    }
+}
+
+
+/* New Section Styling */
+.info-section {
+    border-radius: 20px;
+    margin:10px;
+    background-color: #f9f9f9;
+    padding: 80px 20px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    padding: 50px 20px;
+    transition: all 0.3s ease;
+}
+
+/* Individual Card Style */
+
+.card p {
+    font-size: 1em;
+    color: #777;
+    margin-bottom: 20px;
+    transition: color 0.3s ease;
+}
+
+/* Button Style */
+.card-button {
+margin-top:10px;
+    background-color: #6e45e2;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.2em;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover Effect for Buttons */
+.card-button:hover {
+    background-color: #88d3ce;
+    transform: scale(1.05);
+}
+
+/* Skills Buttons */
+.skills button {
+    background-color:#6e45e2;
+    border: none;
+    padding: 8px 15px;
+    margin-right: 10px;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.skills button:hover {
+    background-color: #6e45e2;
+    color: white;
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    .card {
+        width: calc(100% - 30px); /* Full width on small screens */
+        margin-bottom: 30px;
+    }
+
+    .card-container {
+        flex-direction: column; /* Stack the cards vertically */
+        gap: 20px;
+    }
+}
+
+
+.card, .project-card {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-section {
+    padding: 20px;
+}
+
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjusts columns to fit available space */
+    gap: 20px;
+    padding: 20px;
+}
+/* Center-align H2 and P in Projects Section */
+.projects-section {
+    border-radius: 20px;
+    margin:10px;
+    text-align: center;  /* Center-aligns text within this section */
+    padding: 40px 0;
+}
+
+/* Additional styling for consistency */
+.projects-section h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.projects-section p {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+    color: #666;
+}
+
+/* Project Card Image Styling */
+.project-card img {
+    width: 100%;              /* Full width of the project card */
+    height: 200px;            /* Fixed height for a consistent look */
+    object-fit: cover;        /* Ensures image covers the area without stretching */
+    border-radius: 8px;       /* Matches the card’s rounded corners */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Image Hover Effect */
+.project-card img:hover {
+    transform: scale(1.05);   /* Slight zoom effect on hover */
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+}
+
+
+/* Project Card Styling */
+.project-card {
+     display: flex;
+    flex-direction: column;
+    align-items: center;      /* Center-aligns all elements horizontally */
+    text-align: center;       /* Center-aligns text */
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex: 1 1 calc(25% - 20px);
+}
+
+/* Hover Animation */
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 480px) {
+    .projects-container {
+        padding: 10px; /* Reduced padding for very small screens */
+    }
+}
+
+.social-media-container {
+    border-radius: 20px;
+    margin:10px;
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+    animation: fadeIn 1s ease-in-out; /* Fade-in effect for the section */
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Social Media Section Styling */
+.social-media-section {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+    opacity: 0; /* Initially hidden for animation */
+    animation: fadeInIcons 1s ease-in-out 0.5s forwards; /* Animation for social media icons */
+}
+
+@keyframes fadeInIcons {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+.social-media-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-media-item i {
+    font-size: 2.5em;
+    color: #179EDC;
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+}
+
+/* Hover effect for social media items */
+.social-media-item:hover {
+    transform: scale(1.1);
+    color: #6e45e2;
+}
+
+.social-media-item p {
+    margin-top: 5px;
+    color: #666;
+    transition: color 0.3s ease;
+}
+
+/* Hover effect for text */
+.social-media-item:hover p {
+    color: #88d3ce;
+}
+
+/* Contact Section Styling */
+.contact-section {
+    background-color: #f4f4f9;
+    padding: 80px 20px;
+    text-align: center;
+    animation: fadeIn 1s ease-out;
+}
+.btn{
+margin-top:10px;}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    aligns-items:center;
+    max-width:50%;
+    padding: 12px;
+    margin-top:15px;
+    border-radius: 8px;
+    border: 2px solid #ddd;
+    font-size: 1em;
+    transition: all 0.3s ease-in-out;
+    box-sizing: border-box;
+}
+
+/* Input Field and Textarea Focus Animation */
+.contact-form input:focus, .contact-form textarea:focus {
+    border-color: #6e45e2;
+    transform: translateY(-3px);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.contact-form input, .contact-form textarea {
+    opacity: 0;
+    animation: slideIn 0.5s ease-out forwards;
+}
+
+.contact-form input:nth-child(1), .contact-form textarea:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.contact-form input:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+/* Button Animation */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Slide-in animation for form elements */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design for Small Screens */
+@media (max-width: 768px) {
+    .contact-form {
+        padding: 20px;
+    }
+
+    .contact-form input, .contact-form textarea, .contact-form button {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+
+
+
+button:hover {
+    background-color: #88d3ce;
+}
+/* Basic Section Styling */
+section {
+    padding: 40px 0;
+    transition: background-color 0.3s ease; /* Background animation */
+}
+
+/* Section Hover - Slight background color change */
+section:hover {
+    background-color: #f3f3f3; /* Lighter background on hover */
+}
+
+/* Header Styling for all Section Titles */
+section h2 {
+    font-size: 2em;
+    transition: color 0.3s ease, transform 0.3s ease; /* Color and slight lift */
+}
+
+/* Header Hover - Color and Transform */
+section h2:hover {
+    color: #6e45e2; /* Change color on hover */
+    transform: translateY(-5px);
+}
+
+section p {
+    transition: color 0.3s ease, transform 0.3s ease; /* Color and slight lift */
+}
+
+section p:hover {
+    color: #88d3ce; /* Change color on hover */
+    transform: translateY(-2px); /* Slight lift */
+}
+
+/* Button Hover - Global Style */
+button {
+    background-color: #6e45e2;
+    color: #ffffff;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: #88d3ce; /* Lighter color on hover */
+    transform: scale(1.05); /* Slight scale-up effect */
+}
+
+/* Image Hover Effect for All Images */
+img {
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Scale and shadow */
+}
+
+img:hover {
+    transform: scale(1.05); /* Slight zoom effect */
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+/* Card Hover - Any Section with Card Layout */
+.card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.05); /* Slight lift and scale */
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2); /* Shadow enhancement */
+}
+
